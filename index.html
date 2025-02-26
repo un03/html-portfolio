@@ -1,60 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">  
-        <title>My resume</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Hrithik Bhatade</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            margin: 0;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-top: 50px;
+            animation: bounce 1s infinite alternate;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+        }
+        .heart {
+            color: red;
+            font-size: 50px;
+            position: absolute;
+            animation: float 4s infinite;
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { transform: translateY(-150px) rotate(360deg); opacity: 0; }
+        }
+        .container {
+            margin-top: 20px;
+            font-size: 1.5rem;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 25px;
+            background-color: white;
+            color: #ff758c;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #ff7eb3;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎉 Happy Birthday Hrithik Bhatade! 🎂</h1>
+    <h2>✨ The Heart-Stealer of Girls! ✨</h2>
 
-    </head>
-    
-    <body>
-        <h1>Unmesh Jadhav Resume</h1>
-        <img src="./image001.jpg" height="200">
-        <hr />
-        <p>Hello my name is Unmesh Jadhav.<br />
-            I am currently pursuing MBA Information Systems from the university of toledo.<br/>
-        
-           I have done my bachleors in Information technology.<br /> 
-           My CGPA was 8.53 on the scale of 10.<br/>
-           I am a learner as i am always open for any opportunitites of learning and growing myself
-        </p>
-        <hr />
-        <ul>
-            <h4>Education</h4>
-            <li>Masters of Business Administration (Information Systems)</li>
-            <li>Bachleors of Science in information technology</li>
-            <li>HSC - 12th standard </li>
-            <li>SSC - 10th standard </li>
-            <hr />
+    <div class="container">
+        <p>Wishing you all the happiness, success, and love in the world! 💖</p>
+        <p>May your day be as special as you are! 🥳</p>
+        <button onclick="playMusic()">Click for a Surprise 🎶</button>
+    </div>
 
-            <h4>Work Experience</h4>
-        
-            <li>Vidyalankar Insititute for International Education - (Volunteering): Volunteered as a marketing representative for the year 2024.</li>
+    <audio id="birthdaySong" src="https://www.myinstants.com/media/sounds/happy-birthday-music.mp3"></audio>
 
-            <hr />
-            <h4>Skills</h4>
-            <li>Html</li>
-            <li>Css</li>
-            <li>C++</li>
-            <li>Team Work</li>
-            
-            <hr />
+    <script>
+        function playMusic() {
+            document.getElementById("birthdaySong").play();
+            createHearts();
+        }
 
-            <h4>Awards and Certificates</h4>
-            <li>C++ with data structures - (Develearn Insititute)</li>
-            <li>Programming with C - (Udemy)</li>
-            <li>Marketing Volunteering - (VIIE)</li>
+        function createHearts() {
+            for (let i = 0; i < 15; i++) {
+                let heart = document.createElement("div");
+                heart.className = "heart";
+                heart.innerHTML = "❤️";
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.top = "100vh";
+                heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
+                document.body.appendChild(heart);
 
-        
+                setTimeout(() => {
+                    heart.remove();
+                }, 4000);
+            }
+        }
+    </script>
+    <h2>HTML Image</h2>
+<img src="/Users/unmeshjadhav/Downloads/IMG_7544.jpg" alt="Hrithik Lover Boy" height="200px" width="200px">
 
 
-
-
-        </ul>
-        <a href="./hobbies.html">Hobbies</a>
-        <a href="./contact.html">Contact me</a>
-        <footer>
-            <p>Unmesh@2024</p>
-        </footer>
-
-    </body>
+</body>
 </html>
